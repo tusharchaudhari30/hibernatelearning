@@ -4,15 +4,11 @@ import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
@@ -25,6 +21,7 @@ import lombok.ToString;
 public class User {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer userId;
 
 	private Name name;
@@ -38,6 +35,7 @@ public class User {
 
 	private LocalDateTime createdAt;
 
+	@Column(insertable = false, updatable = false)
 	private String completeName;
 
 }

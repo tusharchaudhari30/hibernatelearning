@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS Users;
 
 -- Create Users table
 CREATE TABLE Users (
-    user_id INT PRIMARY KEY,
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50),
     first VARCHAR(50),
     middle VARCHAR(50),
@@ -22,7 +22,7 @@ CREATE TABLE Users (
 
 -- Create Products table
 CREATE TABLE Products (
-    product_id INT PRIMARY KEY,
+    product_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100),
     description VARCHAR(255),
     price DECIMAL(10,2),
@@ -31,7 +31,7 @@ CREATE TABLE Products (
 
 -- Create Orders table
 CREATE TABLE Orders (
-    order_id INT PRIMARY KEY,
+    order_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT,
     order_date DATE,
     total_amount DECIMAL(10,2),
@@ -40,7 +40,7 @@ CREATE TABLE Orders (
 
 -- Create Order_Items table
 CREATE TABLE Order_Items (
-    order_item_id INT PRIMARY KEY,
+    order_item_id INT PRIMARY KEY AUTO_INCREMENT,
     order_id INT,
     product_id INT,
     quantity INT,
@@ -51,7 +51,7 @@ CREATE TABLE Order_Items (
 
 -- Create Categories table
 CREATE TABLE Categories (
-    category_id INT PRIMARY KEY,
+    category_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50)
 );
 
@@ -65,7 +65,7 @@ CREATE TABLE Product_Categories (
 
 -- Create Reviews table
 CREATE TABLE Reviews (
-    review_id INT PRIMARY KEY,
+    review_id INT PRIMARY KEY AUTO_INCREMENT,
     product_id INT,
     user_id INT,
     rating INT,
@@ -77,7 +77,7 @@ CREATE TABLE Reviews (
 
 -- Create Addresses table
 CREATE TABLE Addresses (
-    address_id INT PRIMARY KEY,
+    address_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT,
     street VARCHAR(100),
     city VARCHAR(50),
