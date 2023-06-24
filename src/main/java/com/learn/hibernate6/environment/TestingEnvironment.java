@@ -1,6 +1,6 @@
 package com.learn.hibernate6.environment;
 
-import com.learn.hibernate6.model.User;
+import com.learn.hibernate6.model.dao.User;
 import com.learn.hibernate6.repository.UserJpaRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -20,9 +20,9 @@ public class TestingEnvironment {
         this.userJpaRepository = userJpaRepository;
     }
 
-    public void setUpTesting(){
-        User user1= User.builder().email("tushar").build();
+    public void setUpTesting() {
+        User user1 = User.builder().email("tushar").build();
         userJpaRepository.save(user1);
-        entityManager.unwrap(Session.class).createMutationQuery("")
+        entityManager.unwrap(Session.class).createMutationQuery("");
     }
 }
